@@ -2,66 +2,31 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Set3
+namespace Testing
 {
-    class Pattern
+    class Incometax
     {
-        int num;
-        public Pattern(int num)
+        public Incometax()
         {
-            this.num = num;
-
-
-
+           
         }
-
-        public void PrintPyramid1()
+        public double CalculateTax(int salary)
         {
-            for (int i = 0; i < this.num; i++)
-            {
-                for (int j = this.num + 2; j > i; j--)
-                {
-                    Console.Write(" ");
-                }
-                for (int k = 0; k < i; k++)
-                {
-                    Console.Write(" * ");
-                }
-                Console.WriteLine();
-            }
+            int Notaxsalary = 11000;
+            int limit1 = 10000;
+            int limit2 = 45000;
+            int limit3 = 150000;
+
+            if (salary < Notaxsalary) return 0;
+
+            if (salary >= limit1) return (salary - Notaxsalary) * (double)0.45;
+
+            if (salary > limit2) return (salary -Notaxsalary) * (double)0.40;
+
+            if (salary > limit3) return (salary - Notaxsalary) * (double)0.20;
+
+
+            return 0;
         }
-
-        public void printpattern2()
-        {
-            for (int i = 1; i < this.num; i++)
-            {
-                for (int j = 1; j <= i; j++)
-                {
-                    Console.Write(j);
-                }
-
-                Console.WriteLine();
-            }
-
-        }
-
-
-        public void printpattern3()
-        {
-
-            for (int i = 1; i < this.num; i++)
-            {
-                for (int j = 1; j <= i; j++)
-                {
-                    Console.Write(i);
-                }
-
-                Console.WriteLine();
-            }
-
-        }
-
-
-
     }
 }
